@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        
+        @-webkit-keyframes color-change-2x{
+            0%{background:#19dcea}100%{background:#b22cff}
+            }
+            
+        @keyframes color-change-2x{
+            0%{background:#19dcea}100%{background:#b22cff}}
+
+        body {
+            padding-top: 40px;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 2em;
+            color: gray;
+            box-sizing: border-box;
+            width: 100%;
+            animation: color-change-2x 10s ease-in infinite alternate both;
+        }
+        h2 {
+            color: gray;
+            font-style: italic;
+            font-size: 1em;
+            background-color: #23261B;
+        }
+        trailer .modal-dialog {
+            margin-top: 200px;
+            align-items: center;
+            position: relative;
+            width: 80%;
+            height: 70%;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin: 0 auto;
+            max-width: 80em;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        .movie-tile > img {
+            padding: 0%;
+            max-width: 22em;
+            width: 19em;
+            height: 30em;
+        }
+
+        .movie-tile > h2 {
+            padding: 3%;
+            position: absolute;
+            opacity: .9;
+            left: 0;
+            bottom: 0;
+            border-radius: 1%;
+            max-width: 40em;
+}
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Andrew's Favorite Movies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="s7EdQ4FqbhY" data-toggle="modal" data-target="#trailer">
+    <img src="https://static.squarespace.com/static/51b3dc8ee4b051b96ceb10de/51ce6099e4b0d911b4489b79/51ce61c4e4b0d911b44a014e/1334883407527/1000w/pulp_fiction_poster_by_samraw08-d3b7d7i.png">
+    <h2>Pulp Fiction (1994)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="6NOcRIHiRtc" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/aYnZvA">
+    <h2>Re-Animator (1985)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="qvsgGtivCgs" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/hwRe3i">
+    <h2>Back to the Future (1985)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="zbCbwP6ibR4" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/FzNCF4">
+    <h2>Robocop (1987)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="reRRAEVHq8E" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/1A6UaC">
+    <h2>Let Me In (2010)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="7RYpJAUMo2M" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/fnqNb3">
+    <h2>Rocky (1976)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="j69OPw9nFHw" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/GRYJP4">
+    <h2>Dawn of the Dead (1979)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="QOLHbQjtSFs" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/JvdzTC">
+    <h2>On The Waterfront (1954)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="hJ2j4oWdQtU" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/5Z6bsd">
+    <h2>The Goonies (1985)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="OjZ1rUQQKxY" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/yk64BW">
+    <h2>There Will Be Blood (2007)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="BUZTybLlWKI" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/q4qp3G">
+    <h2>Drag Me to Hell (2009)</h2>
+
+
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="dCVh4lBfW-c" data-toggle="modal" data-target="#trailer">
+    <img src="https://goo.gl/AVXuCG">
+    <h2>A Nightmare on Elm Street (1984)</h2>
+
+
+</div>
+
+    </div>
+  </body>
+</html>

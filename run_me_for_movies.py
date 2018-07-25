@@ -4,7 +4,7 @@ import fresh_tomatoes
 
 #Credits for movie posters: https://goo.gl/yrsNZS and https://goo.gl/Hj4MKJ 
 pulp_fiction = media.Movie("Pulp Fiction", "1994", "You won't know the facts until you've seen the fiction",
-                           "goo.gl/L57FRo", "https://www.youtube.com/watch?v=s7EdQ4FqbhY")
+                           "https://goo.gl/bptpW7", "https://www.youtube.com/watch?v=s7EdQ4FqbhY")
 robocop = media.Movie("Robocop", "1987", "Robot cop takes on Detroit crime", 
                       "https://goo.gl/FzNCF4", "https://www.youtube.com/watch?v=zbCbwP6ibR4")
 re_animator = media.Movie("Re-Animator", "1985", "Watch science come alive",
