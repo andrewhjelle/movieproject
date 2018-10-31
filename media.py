@@ -1,10 +1,12 @@
-import urllib
 import webbrowser
 
+
 class Movie():
-    '''Creates a shell for a tile to describe a movie with basic characteristics'''
+    # Creates a shell for a tile to describe a movie with basic characteristics
     # Creates the formatting for a movie tile
-    def __init__(self, movie_title, date_released, movie_storyline, poster_image, trailer_youtube):
+    def __init__(
+            self, movie_title, date_released, movie_storyline,
+            poster_image, trailer_youtube):
         self.title = movie_title
         self.release_date = date_released
         self.storyline = movie_storyline
